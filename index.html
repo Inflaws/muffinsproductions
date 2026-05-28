@@ -19,21 +19,60 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            /* Добавлен красивый плавный градиент на фон */
-            background: linear-gradient(135deg, #FFEBE6 0%, var(--cream) 100%);
-            background-attachment: fixed; /* Фон не будет разрываться при скролле */
+            background-color: var(--cream);
             color: var(--text);
             line-height: 1.6;
+            padding-top: 60px; /* Отступ под фиксированное меню */
+        }
+
+        /* Навигационная панель */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--chocolate);
+            border-bottom: 3px solid var(--pink);
+            z-index: 1000;
+            padding: 15px 20px;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
         }
 
         /* Шапка сайта */
         header {
             background-color: var(--chocolate);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 5px solid var(--pink);
         }
@@ -57,35 +96,39 @@
             padding: 0 20px;
         }
 
+        /* Секции */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--chocolate);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
         /* Секция "О нас" */
         .about {
             text-align: center;
-            margin-bottom: 60px;
         }
 
-        .about h2 {
-            font-size: 2rem;
-            color: var(--chocolate);
-            margin-bottom: 20px;
-        }
-
-        /* Блоки с услугами/продуктами */
+        /* Блоки с направлениями */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 60px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9); /* Слегка прозрачный белый для гармонии с градиентом */
+            background: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(74, 46, 43, 0.08);
+            box-shadow: 0 5px 15px rgba(74, 46, 43, 0.05);
             text-align: center;
             transition: transform 0.3s ease;
             border: 1px solid #FFEBE6;
-            backdrop-filter: blur(5px); /* Эффект размытия под карточкой */
         }
 
         .card:hover {
@@ -102,8 +145,58 @@
             margin-bottom: 15px;
         }
 
-        /* Кнопка действия */
-        .cta-btn {
+        /* Секция проектов */
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(74, 46, 43, 0.08);
+            border: 1px solid #FFEBE6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background-color: var(--cream);
+            color: var(--chocolate);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border: 1px solid var(--pink);
+            align-self: flex-start;
+        }
+
+        .project-body h3 {
+            color: var(--chocolate);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .project-body p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Кнопки */
+        .btn {
             display: inline-block;
             background-color: var(--pink);
             color: var(--chocolate);
@@ -111,14 +204,21 @@
             padding: 12px 30px;
             border-radius: 25px;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
-        .cta-btn:hover {
+        .btn:hover {
             background-color: var(--dark-pink);
             color: white;
+        }
+
+        .btn-project {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 0.95rem;
         }
 
         /* Подвал */
@@ -151,8 +251,11 @@
             color: white;
         }
 
-        /* Адаптивность для подвала на мобильных */
+        /* Мобильная адаптивность */
         @media (max-width: 600px) {
+            .nav-links {
+                display: none; /* Для мобильных навигацию можно упростить или скрыть */
+            }
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -162,9 +265,21 @@
 </head>
 <body>
 
+    <!-- Навигация -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">🧁 Muffins Productions</a>
+            <div class="nav-links">
+                <a href="#about">О нас</a>
+                <a href="#features">Направления</a>
+                <a href="#projects">Наши проекты</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Шапка -->
     <header>
-        <h1>🧁 Muffins Productions</h1>
+        <h1>Muffins Productions</h1>
         <p>Создаем полезные утилиты для Garry's Mod и других игр</p>
     </header>
 
@@ -172,13 +287,13 @@
     <div class="container">
         
         <!-- О нас -->
-        <section class="about">
-            <h2>Добро пожаловать!</h2>
+        <section id="about" class="about">
+            <h2 class="section-title">Добро пожаловать!</h2>
             <p>Мы — команда разработчиков Muffins Productions. Наша главная страсть — создание качественных, стабильных и полезных утилит, модификаций и инструментов для Garry's Mod, а также других популярных игровых проектов. Мы делаем геймплей удобнее, а разработку серверов проще.</p>
         </section>
 
         <!-- Направления работы -->
-        <section class="grid">
+        <section id="features" class="grid">
             <div class="card">
                 <div class="icon">🔧</div>
                 <h3>Garry's Mod Utilities</h3>
@@ -196,9 +311,31 @@
             </div>
         </section>
 
+        <!-- Раздел Наши Проекты -->
+        <section id="projects">
+            <h2 class="section-title">Наши проекты</h2>
+            <div class="projects-list">
+                
+                <!-- Карточка проекта WireBranch -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <div>
+                            <span class="project-tag">Garry's Mod Tool</span>
+                            <h3>WireBranch</h3>
+                            <p>Мощный визуальный редактор модов на основе Blueprints. Создавайте логику и аддоны перетаскиванием нод без единой строчки кода. Автоматически генерирует чистый Lua-код.</p>
+                        </div>
+                        <a href="https://inflaws.github.io/wirebranch/" target="_blank" class="btn btn-project">Открыть проект →</a>
+                    </div>
+                </div>
+
+                <!-- Вы можете скопировать блок выше, чтобы добавить новые проекты в будущем -->
+
+            </div>
+        </section>
+
         <!-- Интерактивная кнопка -->
-        <section style="text-align: center;">
-            <button class="cta-btn" onclick="sayHello()">Связаться с разработчиками</button>
+        <section style="text-align: center; margin-top: 20px;">
+            <button class="btn" onclick="sayHello()">Связаться с разработчиками</button>
         </section>
 
     </div>
@@ -207,16 +344,3 @@
     <footer>
         <div class="footer-content">
             <a href="mailto:starhazard88@gmail.com" class="footer-email">✉ starhazard88@gmail.com</a>
-            <p>&copy; 2026 Muffins Productions. Все права защищены сладким законом.</p>
-        </div>
-    </footer>
-
-    <!-- Скрипт обратной связи -->
-    <script>
-        function sayHello() {
-            alert('Спасибо за интерес к Muffins Productions! Напишите нам на почту starhazard88@gmail.com или создайте Issue в этом репозитории на GitHub.');
-        }
-    </script>
-
-</body>
-</html>
