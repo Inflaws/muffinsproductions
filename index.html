@@ -22,7 +22,9 @@
         }
 
         body {
-            background-color: var(--cream);
+            /* Добавлен красивый плавный градиент на фон */
+            background: linear-gradient(135deg, #FFEBE6 0%, var(--cream) 100%);
+            background-attachment: fixed; /* Фон не будет разрываться при скролле */
             color: var(--text);
             line-height: 1.6;
         }
@@ -76,13 +78,14 @@
         }
 
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9); /* Слегка прозрачный белый для гармонии с градиентом */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(74, 46, 43, 0.1);
+            box-shadow: 0 5px 15px rgba(74, 46, 43, 0.08);
             text-align: center;
             transition: transform 0.3s ease;
             border: 1px solid #FFEBE6;
+            backdrop-filter: blur(5px); /* Эффект размытия под карточкой */
         }
 
         .card:hover {
