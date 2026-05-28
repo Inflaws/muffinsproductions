@@ -122,10 +122,38 @@
         footer {
             background-color: var(--chocolate);
             color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             margin-top: 80px;
             font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-email {
+            color: var(--pink);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: white;
+        }
+
+        /* Адаптивность для подвала на мобильных */
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -134,7 +162,7 @@
     <!-- Шапка -->
     <header>
         <h1>🧁 Muffins Productions</h1>
-        <p>Создаем шедевры со вкусом и любовью</p>
+        <p>Создаем полезные утилиты для Garry's Mod и других игр</p>
     </header>
 
     <!-- Главный контент -->
@@ -143,44 +171,47 @@
         <!-- О нас -->
         <section class="about">
             <h2>Добро пожаловать!</h2>
-            <p>Muffins Productions. Наша команда создает полезные утилиты для Garry's Mod и других игр.</p>
+            <p>Мы — команда разработчиков Muffins Productions. Наша главная страсть — создание качественных, стабильных и полезных утилит, модификаций и инструментов для Garry's Mod, а также других популярных игровых проектов. Мы делаем геймплей удобнее, а разработку серверов проще.</p>
         </section>
 
         <!-- Направления работы -->
         <section class="grid">
             <div class="card">
-                <div class="icon">🎨</div>
-                <h3>Простота использования</h3>
-                <p>Воплощай свои идеи в жизнь без головной боли.</p>
+                <div class="icon">🔧</div>
+                <h3>Garry's Mod Utilities</h3>
+                <p>Разрабатываем скрипты, аддоны и инструменты оптимизации, которые помогают игрокам и администраторам серверов.</p>
             </div>
             <div class="card">
-                <div class="icon">🎬</div>
-                <h3>Состав</h3>
-                <p>Inflaws, LeemONad.</p>
+                <div class="icon">🎮</div>
+                <h3>Multi-Game Tools</h3>
+                <p>Создаем вспомогательный софт, плагины и полезные утилиты для различных игровых платформ и песочниц.</p>
             </div>
             <div class="card">
                 <div class="icon">💻</div>
-                <h3>IT-Решения</h3>
-                <p>Пишем чистый код и запускаем утилиты, которые работают быстро и без сбоев.</p>
+                <h3>Оптимизация и Код</h3>
+                <p>Пишем чистый, производительный код, чтобы наши утилиты работали быстро и не нагружали ваши любимые игры.</p>
             </div>
         </section>
 
         <!-- Интерактивная кнопка -->
         <section style="text-align: center;">
-            <button class="cta-btn" onclick="sayHello()">Связаться с нами</button>
+            <button class="cta-btn" onclick="sayHello()">Связаться с разработчиками</button>
         </section>
 
     </div>
 
     <!-- Подвал -->
     <footer>
-        <p>&copy; 2026 Muffins Productions. Все права защищены сладким законом.</p>
+        <div class="footer-content">
+            <a href="mailto:starhazard88@gmail.com" class="footer-email">✉ starhazard88@gmail.com</a>
+            <p>&copy; 2026 Muffins Productions. Все права защищены сладким законом.</p>
+        </div>
     </footer>
 
     <!-- Скрипт обратной связи -->
     <script>
         function sayHello() {
-            alert('Спасибо за интерес к Muffins Productions! Напишите нам на почту или создайте Issue в этом репозитории на GitHub.');
+            alert('Спасибо за интерес к Muffins Productions! Напишите нам на почту starhazard88@gmail.com или создайте Issue в этом репозитории на GitHub.');
         }
     </script>
 
