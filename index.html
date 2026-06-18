@@ -252,7 +252,18 @@
                 text-align: center;
             }
         }
-    </style>
+    
+.lang-btn{
+    background:transparent;
+    color:white;
+    border:1px solid white;
+    border-radius:6px;
+    padding:4px 8px;
+    margin-left:6px;
+    cursor:pointer;
+}
+
+</style>
 </head>
 <body>
 
@@ -260,40 +271,42 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">Muffins Productions</a>
             <div class="nav-links">
-                <a href="#about">О нас</a>
-                <a href="#features">Направления</a>
-                <a href="#projects">Наши проекты</a>
+                <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <a href="#about"><span data-ru="О нас" data-en="About">О нас</span></a>
+                <a href="#features"><span data-ru="Направления" data-en="Features">Направления</span></a>
+                <a href="#projects"><span data-ru="Наши проекты" data-en="Projects">Наши проекты</span></a>
             </div>
         </div>
     </nav>
 
     <header>
         <img src="IMG_0416.jpeg" class="header-logo">
-        <p>Создаем полезные утилиты для Garry's Mod и других игр</p>
+        <p><span data-ru="Создаем полезные утилиты для Garry's Mod и других игр" data-en="Creating useful utilities for Garry's Mod and other games">Создаем полезные утилиты для Garry's Mod и других игр</span></p>
     </header>
 
     <div class="container">
 
         <section id="about" class="about">
-            <h2 class="section-title">Добро пожаловать!</h2>
-            <p>Мы — команда разработчиков Muffins Productions. Наша главная страсть — создание качественных, стабильных и полезных утилит, модификаций и инструментов для Garry's Mod, а также других популярных игровых проектов. Мы делаем геймплей удобнее, а разработку серверов проще.</p>
+            <h2 class="section-title"><span data-ru="Добро пожаловать!" data-en="Welcome!">Добро пожаловать!</span></h2>
+            <p><span data-ru="Мы — команда разработчиков Muffins Productions. Наша главная страсть — создание качественных, стабильных и полезных утилит, модификаций и инструментов для Garry's Mod, а также других популярных игровых проектов. Мы делаем геймплей удобнее, а разработку серверов проще." data-en="We are the Muffins Productions development team. Our passion is creating high-quality, stable and useful utilities, modifications and tools for Garry's Mod and other popular games. We make gameplay more convenient and server development easier.">Мы — команда разработчиков Muffins Productions. Наша главная страсть — создание качественных, стабильных и полезных утилит, модификаций и инструментов для Garry's Mod, а также других популярных игровых проектов. Мы делаем геймплей удобнее, а разработку серверов проще.</span></p>
         </section>
 
         <section id="features" class="grid">
             <div class="card">
                 <div class="icon">🔧</div>
                 <h3>Garry's Mod Utilities</h3>
-                <p>Разрабатываем скрипты, аддоны и инструменты оптимизации, которые помогают игрокам и администраторам серверов.</p>
+                <p><span data-ru="Разрабатываем скрипты, аддоны и инструменты оптимизации, которые помогают игрокам и администраторам серверов." data-en="We develop scripts, addons and optimization tools that help players and server administrators.">Разрабатываем скрипты, аддоны и инструменты оптимизации, которые помогают игрокам и администраторам серверов.</span></p>
             </div>
             <div class="card">
                 <div class="icon">🎮</div>
                 <h3>Multi-Game Tools</h3>
-                <p>Создаем вспомогательный софт, плагины и полезные утилиты для различных игровых платформ и песочниц.</p>
+                <p><span data-ru="Создаем вспомогательный софт, плагины и полезные утилиты для различных игровых платформ и песочниц." data-en="We create companion software, plugins and useful utilities for various gaming platforms and sandboxes.">Создаем вспомогательный софт, плагины и полезные утилиты для различных игровых платформ и песочниц.</span></p>
             </div>
             <div class="card">
                 <div class="icon">💻</div>
-                <h3>Оптимизация и Код</h3>
-                <p>Пишем чистый, производительный код, чтобы наши утилиты работали быстро и не нагружали ваши любимые игры.</p>
+                <h3><span data-ru="Оптимизация и Код" data-en="Optimization & Code">Оптимизация и Код</span></h3>
+                <p><span data-ru="Пишем чистый, производительный код, чтобы наши утилиты работали быстро и не нагружали ваши любимые игры." data-en="We write clean and efficient code so our tools run fast and do not overload your favorite games.">Пишем чистый, производительный код, чтобы наши утилиты работали быстро и не нагружали ваши любимые игры.</span></p>
             </div>
         </section>
 
@@ -305,9 +318,9 @@
                         <div>
                             <span class="project-tag">Garry's Mod Tool</span>
                             <h3>WireBranch</h3>
-                            <p>Мощный визуальный редактор модов на основе Blueprints. Создавайте логику и аддоны перетаскиванием нод без единой строчки кода. Автоматически генерирует чистый Lua-код.</p>
+                            <p><span data-ru="Мощный визуальный редактор модов на основе Blueprints. Создавайте логику и аддоны перетаскиванием нод без единой строчки кода. Автоматически генерирует чистый Lua-код." data-en="A powerful visual mod editor based on Blueprints. Create logic and addons by dragging nodes without writing code. Automatically generates clean Lua code.">Мощный визуальный редактор модов на основе Blueprints. Создавайте логику и аддоны перетаскиванием нод без единой строчки кода. Автоматически генерирует чистый Lua-код.</span></p>
                         </div>
-                        <a href="https://inflaws.github.io/wirebranch/" target="_blank" class="btn btn-project">Открыть проект →</a>
+                        <a href="https://inflaws.github.io/wirebranch/" target="_blank" class="btn btn-project"><span data-ru="Открыть проект →" data-en="Open Project →">Открыть проект →</span></a>
                     </div>
                 </div>
             </div>
@@ -331,5 +344,19 @@
 
 
 
+
+<script>
+function setLanguage(lang){
+ document.querySelectorAll('[data-ru]').forEach(el=>{
+   el.textContent = el.dataset[lang];
+ });
+ document.documentElement.lang = lang;
+ localStorage.setItem('site_lang', lang);
+}
+window.addEventListener('DOMContentLoaded',()=>{
+ setLanguage(localStorage.getItem('site_lang') || 'ru');
+});
+</script>
 </body>
+
 </html>
