@@ -6,31 +6,121 @@
 <title>Think Free</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: #ffffff;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+html{
+    scroll-behavior:smooth;
 }
 
-img {
-    max-width: 500px;
-    width: 80%;
-    height: auto;
+body{
+    background:#fff;
+    color:#111;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+    overflow-x:hidden;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.logo{
+    width:min(420px,70vw);
+    animation:fadeUp 1.4s ease;
+}
+
+.subtitle{
+    margin-top:40px;
+    font-size:1.2rem;
+    color:#666;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    animation:fadeUp 1.8s ease;
+}
+
+.scroll{
+    position:absolute;
+    bottom:40px;
+    color:#999;
+    font-size:.9rem;
+    letter-spacing:.2em;
+}
+
+/* Section */
+
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:80px 30px;
+}
+
+h1{
+    font-size:clamp(3rem,8vw,7rem);
+    font-weight:700;
+    line-height:1;
+}
+
+p{
+    margin-top:20px;
+    max-width:700px;
+    text-align:center;
+    color:#555;
+    font-size:1.2rem;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 </style>
 </head>
 
 <body>
-    <img src="thinkfree.jpeg" alt="Think Free">
+
+<section class="hero">
+
+    <img src="thinkfree.jpeg" class="logo">
+
+    <div class="subtitle">
+        THINK FREE
+    </div>
+
+    <div class="scroll">
+        SCROLL
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h1>Think free.</h1>
+
+    <p>
+        Software, operating systems and ideas
+        built without limits.
+    </p>
+
+</section>
+
 </body>
 </html>
